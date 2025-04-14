@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>選單範例</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <style>
+      ul ul {
+        display: none;
+        list-style: none;
+        padding-left: 20px;
+      }
+      ul li {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li>首頁</li>
+      <li>自我介紹</li>
+      <li id="portfolio">
+        作品集
+        <ul>
+          <li><a href="https://mathkyaru317.github.io/20250303_2/" target="_blank">第一周作業</a></li>
+          <li><a href="https://mathkyaru317.github.io/20250310_2/" target="_blank">第二周作業</a></li>
+          <li><a href="https://mathkyaru317.github.io/20250317/" target="_blank">第三周作業</a></li>
+          <li><a href="https://mathkyaru317.github.io/20250324/" target="_blank">第四周作業</a></li>
+        </ul>
+      </li>
+      <li>測驗卷</li>
+      <li>教學影片</li>
+    </ul>
+    <script>
+      document.getElementById('portfolio').addEventListener('click', function () {
+        const submenu = this.querySelector('ul');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      document.querySelector('li:nth-child(2)').addEventListener('click', function () {
+        window.location.href = 'https://www.facebook.com/MathKyaru/';
+      });
+    </script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
